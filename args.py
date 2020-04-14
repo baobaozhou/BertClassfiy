@@ -1,7 +1,7 @@
 import os
 import tensorflow as tf
 
-tf.logging.set_verbosity(tf.logging.INFO)
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.INFO)
 
 file_path = os.path.dirname(__file__)
 
@@ -13,11 +13,11 @@ vocab_file = os.path.join(model_dir, 'vocab.txt')
 data_dir = os.path.join(model_dir, '../data/')
 
 num_train_epochs = 10
-batch_size = 128
+batch_size = 254
 learning_rate = 0.00005
 
 # gpu使用率
-gpu_memory_fraction = 0.8
+gpu_memory_fraction = 1.0
 
 # 默认取倒数第二层的输出值作为句向量
 layer_indexes = [-2]
